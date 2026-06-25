@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>INNTOP — ТОП-10 игр, в которые каждый ПК-геймер должен сыграть</title>
+
+<meta name="description"
+content="ТОП-10 игр для ПК-геймеров. Minecraft, Cyberpunk 2077, Resident Evil 4, Dark Souls, Elden Ring, Half-Life 2, S.T.A.L.K.E.R. 2 и другие культовые игры.">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+
+--bg:#050816;
+--bg2:#0d1022;
+
+--card:rgba(255,255,255,.05);
+--border:rgba(255,255,255,.12);
+
+--cyan:#00e5ff;
+--purple:#8b5cf6;
+--pink:#ff3cac;
+
+--gold:#ffd700;
+--silver:#cfd4dc;
+--bronze:#cd7f32;
+
+--text:#ffffff;
+--muted:#b9bfd1;
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+font-family:'Inter',sans-serif;
+
+background:
+radial-gradient(circle at top left,#172554 0%,transparent 30%),
+radial-gradient(circle at top right,#581c87 0%,transparent 30%),
+linear-gradient(180deg,var(--bg),var(--bg2));
+
+color:white;
+overflow-x:hidden;
+
+}
+
+.container{
+width:min(1450px,92%);
+margin:auto;
+}
+
+section{
+padding:90px 0;
+}
+
+/* ======================
+HEADER
+====================== */
+
+header{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+z-index:999;
+
+background:rgba(0,0,0,.3);
+
+backdrop-filter:blur(18px);
+
+border-bottom:
+1px solid rgba(255,255,255,.08);
+
+}
+
+.nav{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:18px 0;
+
+}
+
+.logo{
+
+font-size:2rem;
+font-weight:900;
+
+letter-spacing:2px;
+
+background:
+linear-gradient(
+90deg,
+var(--cyan),
+var(--pink)
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+}
+
+.nav a{
+
+color:white;
+text-decoration:none;
+font-weight:600;
+
+}
+
+/* ======================
+HERO
+====================== */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+
+position:relative;
+overflow:hidden;
+
+}
+
+.hero::before{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+
+linear-gradient(
+rgba(0,0,0,.65),
+rgba(0,0,0,.75)
+),
+
+url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80");
+
+background-size:cover;
+background-position:center;
+
+z-index:-2;
+
+}
+
+.hero::after{
+
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+radial-gradient(
+circle,
+rgba(0,229,255,.1),
+transparent 60%
+);
+
+}
+
+.hero-content{
+
+max-width:1000px;
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,7vw,6rem);
+
+font-weight:900;
+
+line-height:1.05;
+
+margin-bottom:25px;
+
+}
+
+.hero p{
+
+font-size:1.25rem;
+
+line-height:1.8;
+
+color:var(--muted);
+
+margin-bottom:40px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+padding:18px 40px;
+
+border-radius:999px;
+
+text-decoration:none;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+90deg,
+var(--cyan),
+var(--purple)
+);
+
+box-shadow:
+0 0 25px rgba(0,229,255,.35),
+0 0 60px rgba(139,92,246,.25);
+
+transition:.35s;
+
+}
+
+.hero-btn:hover{
+
+transform:
+translateY(-5px)
+scale(1.05);
+
+}
+
+/* ======================
+SECTION TITLE
+====================== */
+
+.section-title{
+
+text-align:center;
+margin-bottom:60px;
+
+}
+
+.section-title h2{
+
+font-size:3rem;
+margin-bottom:15px;
+
+}
+
+.section-title p{
+
+color:var(--muted);
+
+}
+
+/* ======================
+CARDS
+====================== */
+
+.game-card{
+
+display:grid;
+grid-template-columns:450px 1fr;
+
+background:var(--card);
+
+backdrop-filter:blur(18px);
+
+border:1px solid var(--border);
+
+border-radius:30px;
+
+overflow:hidden;
+
+margin-bottom:45px;
+
+transition:.4s;
+
+opacity:0;
+transform:translateY(60px);
+
+}
+
+.game-card.show{
+
+opacity:1;
+transform:translateY(0);
+
+}
+
+.game-card:hover{
+
+transform:translateY(-8px);
+
+border-color:
+rgba(0,229,255,.35);
+
+box-shadow:
+0 0 30px rgba(0,229,255,.15);
+
+}
+
+.game-image{
+
+min-height:430px;
+
+background-size:cover;
+background-position:center;
+
+cursor:pointer;
+
+position:relative;
+
+}
+
+.game-image::after{
+
+content:"🔍";
+
+position:absolute;
+
+top:20px;
+right:20px;
+
+width:50px;
+height:50px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+font-size:1.3rem;
+
+border-radius:50%;
+
+background:rgba(0,0,0,.5);
+
+backdrop-filter:blur(10px);
+
+opacity:0;
+
+transition:.3s;
+
+}
+
+.game-image:hover::after{
+
+opacity:1;
+
+}
+
+.game-content{
+
+padding:50px;
+
+}
+
+.rank{
+
+display:inline-block;
+
+padding:10px 18px;
+
+border-radius:999px;
+
+font-size:.9rem;
+font-weight:700;
+
+margin-bottom:20px;
+
+background:
+linear-gradient(
+90deg,
+var(--cyan),
+white
+);
+
+color:black;
+
+}
+
+.game-content h3{
+
+font-size:2.3rem;
+margin-bottom:20px;
+
+}
+
+.game-content p{
+
+line-height:1.9;
+color:var(--muted);
+
+margin-bottom:18px;
+
+}
+
+.game-content h4{
+
+margin-top:25px;
+margin-bottom:10px;
+
+color:var(--cyan);
+
+}
+
+.game-content ul{
+
+padding-left:20px;
+margin-bottom:20px;
+
+}
+
+.game-content li{
+
+line-height:1.8;
+color:var(--muted);
+
+}
+
+/* ======================
+TOP 3
+====================== */
+
+.gold{
+
+border:2px solid rgba(255,215,0,.45);
+
+box-shadow:
+0 0 40px rgba(255,215,0,.15);
+
+}
+
+.gold .rank{
+
+background:
+linear-gradient(
+90deg,
+#ffd700,
+#fff8be
+);
+
+}
+
+.silver{
+
+border:2px solid rgba(207,212,220,.45);
+
+box-shadow:
+0 0 40px rgba(207,212,220,.12);
+
+}
+
+.silver .rank{
+
+background:
+linear-gradient(
+90deg,
+#cfd4dc,
+white
+);
+
+}
+
+.bronze{
+
+border:2px solid rgba(205,127,50,.45);
+
+box-shadow:
+0 0 40px rgba(205,127,50,.12);
+
+}
+
+.bronze .rank{
+
+background:
+linear-gradient(
+90deg,
+#cd7f32,
+#f6d0a1
+);
+
+}
+
+.top-one .game-image{
+
+min-height:600px;
+
+}
+
+.top-one h3{
+
+font-size:3rem;
+
+}
+
+/* ======================
+LIGHTBOX
+====================== */
+
+.lightbox{
+
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,.95);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:10000;
+
+opacity:0;
+visibility:hidden;
+
+transition:.3s;
+
+}
+
+.lightbox.active{
+
+opacity:1;
+visibility:visible;
+
+}
+
+.lightbox img{
+
+max-width:90%;
+max-height:90%;
+
+border-radius:20px;
+
+box-shadow:
+0 0 50px rgba(0,229,255,.3);
+
+}
+
+.lightbox-close{
+
+position:absolute;
+
+top:20px;
+right:35px;
+
+font-size:3rem;
+
+cursor:pointer;
+
+}
+
+/* ======================
+COOKIE
+====================== */
+
+.cookie-banner{
+
+position:fixed;
+
+left:25px;
+right:25px;
+bottom:25px;
+
+z-index:9999;
+
+background:
+rgba(15,15,25,.96);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.12);
+
+border-radius:20px;
+
+padding:25px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+gap:20px;
+
+}
+
+.cookie-banner.hide{
+
+display:none;
+
+}
+
+.cookie-text{
+
+color:var(--muted);
+line-height:1.7;
+
+}
+
+.cookie-btn{
+
+border:none;
+
+padding:14px 25px;
+
+border-radius:999px;
+
+cursor:pointer;
+
+font-weight:700;
+
+color:white;
+
+background:
+linear-gradient(
+90deg,
+var(--cyan),
+var(--purple)
+);
+
+}
+
+/* ======================
+INFO
+====================== */
+
+.info-box{
+
+background:var(--card);
+
+border:1px solid var(--border);
+
+border-radius:30px;
+
+padding:45px;
+
+line-height:1.9;
+
+color:var(--muted);
+
+}
+
+/* ======================
+FOOTER
+====================== */
+
+footer{
+
+padding:70px 0;
+
+border-top:
+1px solid rgba(255,255,255,.08);
+
+background:
+rgba(0,0,0,.2);
+
+}
+
+.footer-grid{
+
+display:grid;
+gap:12px;
+
+text-align:center;
+
+color:var(--muted);
+
+}
+
+.footer-grid a{
+
+color:var(--cyan);
+text-decoration:none;
+
+}
+
+@media(max-width:900px){
+
+.game-card{
+
+grid-template-columns:1fr;
+
+}
+
+.game-image{
+
+min-height:300px;
+
+}
+
+.top-one .game-image{
+
+min-height:380px;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
+
+.section-title h2{
+
+font-size:2.2rem;
+
+}
+
+.cookie-banner{
+
+flex-direction:column;
+text-align:center;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="container nav">
+
+<div class="logo">
+INNTOP
+</div>
+
+<a href="#rating">
+Рейтинг
+</a>
+
+</div>
+
+</header>
+
+<section class="hero">
+
+<div class="container hero-content">
+
+<h1>
+ТОП-10 игр,
+в которые каждый ПК-геймер должен сыграть хотя бы раз
+</h1>
+
+<p>
+Топ-10 культовых игр, которые оставили огромный след в истории игровой индустрии и обязательны к прохождению каждому любителю ПК-гейминга.
+</p>
+
+<a href="#rating" class="hero-btn">
+Начать просмотр рейтинга
+</a>
+
+</div>
+
+</section>
+
+<section id="rating">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Лучшие игры для ПК-геймера
+</h2>
+
+<p>
+Рейтинг от 10 места до абсолютного победителя.
+</p>
+
+</div>
+
+<!-- ======================
+10 МЕСТО
+====================== -->
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://avatars.mds.yandex.net/i?id=b84ce373beb66b15d7ca0243d96d9d38_l-4552023-images-thumbs&n=13')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#10 место
+</div>
+
+<h3>Counter-Strike 2</h3>
+
+<p>
+Counter-Strike 2 — продолжение легендарной серии тактических шутеров, которая уже более двух десятилетий остается символом соревновательного гейминга. Благодаря переходу на движок Source 2 игра получила современную графику, улучшенное освещение и новые игровые механики.
+</p>
+
+<p>
+Каждый матч представляет собой напряженное противостояние двух команд, где решают не только реакция и точность стрельбы, но и грамотная тактика, командная работа и понимание карты.
+</p>
+
+<p>
+CS2 остается одной из самых популярных киберспортивных дисциплин мира и регулярно собирает многомиллионную аудиторию на турнирах.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Игра позволяет познакомиться с настоящим соревновательным геймингом и понять основы командного взаимодействия.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Первая версия Counter-Strike появилась еще в 1999 году.</li>
+<li>Крупнейшие турниры имеют призовые фонды в миллионы долларов.</li>
+<li>Серия считается одной из самых влиятельных в истории FPS.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Идеальный баланс.</li>
+<li>Командный геймплей.</li>
+<li>Киберспорт мирового уровня.</li>
+<li>Высокий порог мастерства.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+9 МЕСТО
+====================== -->
+
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://i.pinimg.com/originals/70/93/1e/70931e8eb3aa2684bee6940f7a342b0e.png?nii=t')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#9 место
+</div>
+
+<h3>Roblox</h3>
+
+<p>
+Roblox является не просто игрой, а огромной платформой, объединяющей миллионы пользователей по всему миру. Здесь каждый может создавать собственные проекты, разрабатывать игровые режимы и делиться ими с другими людьми.
+</p>
+
+<p>
+Платформа предлагает невероятное разнообразие контента: хорроры, гонки, RPG, симуляторы жизни, экшен-игры и многое другое.
+</p>
+
+<p>
+Для многих начинающих разработчиков Roblox стал первой ступенью в игровой индустрии, позволяя создавать полноценные проекты без огромных бюджетов.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Roblox показывает безграничные возможности пользовательского творчества и демонстрирует, как выглядит крупнейшее игровое сообщество современности.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>На платформе опубликованы миллионы игр.</li>
+<li>Некоторые разработчики зарабатывают реальные деньги.</li>
+<li>Ежедневно Roblox посещают десятки миллионов игроков.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Творческая свобода.</li>
+<li>Огромное количество контента.</li>
+<li>Активное сообщество.</li>
+<li>Возможность создавать собственные игры.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+8 МЕСТО
+====================== -->
+
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://images5.alphacoders.com/116/thumb-1920-1168976.png')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#8 место
+</div>
+
+<h3>ULTRAKILL</h3>
+
+<p>
+ULTRAKILL — безумно быстрый шутер, вдохновленный классическими FPS девяностых годов. Игра делает ставку на скорость, агрессию и зрелищность.
+</p>
+
+<p>
+Каждый уровень заставляет игрока постоянно двигаться вперед, использовать разнообразное оружие и уничтожать врагов максимально эффектно.
+</p>
+
+<p>
+Уникальный визуальный стиль сочетает ретро-графику и современные спецэффекты, благодаря чему игра выглядит одновременно ностальгически и свежо.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+ULTRAKILL показывает, насколько захватывающими могут быть классические идеи шутеров даже в современной игровой индустрии.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Игра вдохновлена Doom и Quake.</li>
+<li>Система рейтингов поощряет стильную игру.</li>
+<li>Проект быстро получил культовый статус среди фанатов FPS.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Высокая скорость геймплея.</li>
+<li>Стильный дизайн.</li>
+<li>Отличная музыка.</li>
+<li>Большая реиграбельность.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+7 МЕСТО
+====================== -->
+
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://pic.rutubelist.ru/video/2024-12-28/6b/96/6b96bfc69ba1d65c545dfbc832d3db23.jpg')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#7 место
+</div>
+
+<h3>S.T.A.L.K.E.R. 2</h3>
+
+<p>
+S.T.A.L.K.E.R. 2 возвращает игроков в легендарную Зону отчуждения — опасное место, наполненное аномалиями, мутантами и загадочными артефактами.
+</p>
+
+<p>
+Открытый мир игры предлагает десятки часов исследования, множество сюжетных линий и атмосферу, которую невозможно спутать ни с одной другой серией.
+</p>
+
+<p>
+Постоянное чувство опасности, ограниченные ресурсы и неожиданные встречи делают каждое путешествие по Зоне уникальным.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Это один из лучших примеров атмосферного исследования мира и выживания в современной игровой индустрии.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Зона вдохновлена Чернобыльской АЭС.</li>
+<li>Серия имеет культовый статус в СНГ.</li>
+<li>В игре присутствуют сотни уникальных событий.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Невероятная атмосфера.</li>
+<li>Открытый мир.</li>
+<li>Интересный сюжет.</li>
+<li>Элементы выживания.</li>
+</ul>
+
+</div>
+</div>
+<!-- ======================
+6 МЕСТО
+====================== -->
+
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://images.steamusercontent.com/ugc/2201757641388682540/C6D8C5364A7CB83900C471ABC1FE585F1C1E7694/?imw=512&imh=288&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#6 место
+</div>
+
+<h3>Half-Life 2</h3>
+
+<p>
+Half-Life 2 — одна из самых революционных игр в истории индустрии. Проект от Valve изменил представление игроков о сюжетных шутерах и показал, насколько глубоко можно объединить историю, физику и игровой процесс.
+</p>
+
+<p>
+Игрок берет на себя роль легендарного Гордона Фримена и оказывается в мире, захваченном инопланетной организацией Альянс. История подается без длинных кат-сцен и практически не отрывает игрока от происходящего.
+</p>
+
+<p>
+Главным технологическим достижением игры стал Source Engine. Реалистичная физика позволила взаимодействовать практически с любыми объектами окружения и сделала головоломки намного интереснее.
+</p>
+
+<p>
+Даже спустя годы Half-Life 2 остается образцом качественного дизайна уровней и повествования.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Эта игра позволяет увидеть один из важнейших этапов развития современных шутеров и понять, почему серия Half-Life считается легендарной.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Half-Life 2 получила десятки наград «Игра года».</li>
+<li>Source Engine стал одним из самых популярных движков своего времени.</li>
+<li>Гравипушка считается одним из самых культовых видов оружия в играх.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Революционная физика.</li>
+<li>Легендарный сюжет.</li>
+<li>Отличный дизайн уровней.</li>
+<li>Огромное влияние на индустрию.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+5 МЕСТО
+====================== -->
+
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://images.live.vkvideo.ru/public_video_stream/record/1c0588ee-9c83-4320-8dd8-c0f8a4a7bf08/custom_preview?change_time=1731736197')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#5 место
+</div>
+
+<h3>Elden Ring</h3>
+
+<p>
+Elden Ring объединила лучшие идеи FromSoftware и превратила их в грандиозное приключение с огромным открытым миром. Игра предлагает десятки часов исследования, сотни секретов и огромное количество контента.
+</p>
+
+<p>
+Каждая область карты наполнена подземельями, скрытыми боссами, уникальным снаряжением и неожиданными открытиями. Игрок постоянно получает награду за любопытство.
+</p>
+
+<p>
+Особую известность игре принесли масштабные и сложные боссы, многие из которых уже стали легендами среди поклонников жанра.
+</p>
+
+<p>
+Мир Elden Ring буквально заставляет исследовать его самостоятельно, не ведя игрока за руку.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Это один из лучших открытых миров в истории RPG и великолепный пример того, как должна выглядеть современная ролевая игра.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>В создании мира участвовал Джордж Мартин.</li>
+<li>Игра получила множество наград «Игра года».</li>
+<li>Карта Elden Ring скрывает огромное количество секретов.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Масштабный открытый мир.</li>
+<li>Эпические боссы.</li>
+<li>Свобода исследования.</li>
+<li>Высокая реиграбельность.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+4 МЕСТО
+====================== -->
+
+<div class="game-card reveal">
+
+<div class="game-image"
+style="background-image:url('https://avatars.mds.yandex.net/i?id=db5d9ee2d5f37d2658d23e6ac976f718_l-5231374-images-thumbs&n=13')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+#4 место
+</div>
+
+<h3>Dark Souls</h3>
+
+<p>
+Dark Souls стала настоящей легендой игровой индустрии и фактически создала отдельный жанр souls-like. Эта игра изменила отношение игроков к сложности и награде за преодоление препятствий.
+</p>
+
+<p>
+Каждый противник здесь представляет опасность, а победа над боссом ощущается как настоящее достижение. Именно поэтому миллионы игроков по всему миру полюбили серию.
+</p>
+
+<p>
+Особое внимание заслуживает устройство мира. Все локации соединены между собой в единую систему, создавая ощущение настоящего путешествия.
+</p>
+
+<p>
+История подается через окружение, предметы и диалоги персонажей, что делает исследование еще более интересным.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Dark Souls помогает понять происхождение одного из самых популярных жанров современности и дарит уникальное чувство прогресса.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Фраза «You Died» стала культовой.</li>
+<li>Игра породила огромное количество подражателей.</li>
+<li>Серия считается одной из самых влиятельных RPG.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Высокая сложность.</li>
+<li>Глубокий лор.</li>
+<li>Продуманный мир.</li>
+<li>Культовый статус.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+3 МЕСТО
+====================== -->
+
+<div class="game-card bronze reveal">
+
+<div class="game-image"
+style="background-image:url('https://www.sammobile.com/wp-content/uploads/2023/12/Resident-Evil-4.jpg')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+🥉 #3 место
+</div>
+
+<h3>Resident Evil 4</h3>
+
+<p>
+Resident Evil 4 считается одной из самых влиятельных игр всех времен. Она полностью изменила жанр экшенов от третьего лица и задала новые стандарты для индустрии.
+</p>
+
+<p>
+История Леона Кеннеди, отправившегося спасать дочь президента США, быстро превращается в опасное путешествие через зараженные деревни, замки и секретные лаборатории.
+</p>
+
+<p>
+Именно Resident Evil 4 популяризировала знаменитую камеру через плечо, которая позже стала стандартом для десятков крупных игр.
+</p>
+
+<p>
+Игра идеально сочетает элементы хоррора, исследования мира и динамичного экшена, благодаря чему остается актуальной даже спустя многие годы.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Resident Evil 4 позволяет увидеть одну из самых важных революций в истории игровых экшенов.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Игра получила более 100 наград.</li>
+<li>Многие современные TPS вдохновлены именно ей.</li>
+<li>Регулярно входит в списки лучших игр всех времен.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Баланс хоррора и экшена.</li>
+<li>Легендарная история.</li>
+<li>Революционная камера.</li>
+<li>Огромное влияние на индустрию.</li>
+</ul>
+
+</div>
+</div>
+<!-- ======================
+2 МЕСТО
+====================== -->
+
+<div class="game-card silver reveal">
+
+<div class="game-image"
+style="background-image:url('https://forum.happypc.ru/uploads/monthly_2023_04/1680545163959.jpg.9a4faea66e788f3943464f9cb1181dcb.jpg')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+🥈 #2 место
+</div>
+
+<h3>Cyberpunk 2077</h3>
+
+<p>
+Cyberpunk 2077 — один из самых амбициозных RPG-проектов последних лет. После множества обновлений игра превратилась в полноценный эталон жанра киберпанк и смогла раскрыть весь свой потенциал.
+</p>
+
+<p>
+Главным украшением проекта является Найт-Сити — огромный мегаполис будущего, наполненный неоновыми вывесками, преступными группировками, корпорациями и сотнями историй.
+</p>
+
+<p>
+Сюжет рассказывает историю наёмника Ви, чья жизнь оказывается связана с цифровой копией личности Джонни Сильверхенда. Игрок принимает множество решений, влияющих на развитие событий.
+</p>
+
+<p>
+Отличная ролевая система позволяет создавать самые разные билды: от скрытного хакера до тяжеловооружённого бойца.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Cyberpunk 2077 демонстрирует возможности современных RPG и предлагает один из самых красивых игровых миров последних лет.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Роль Джонни Сильверхенда исполнил Киану Ривз.</li>
+<li>После обновлений игра пережила второе рождение.</li>
+<li>Найт-Сити считается одним из самых проработанных игровых городов.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Великолепный сюжет.</li>
+<li>Огромный открытый город.</li>
+<li>Глубокая прокачка персонажа.</li>
+<li>Мощная атмосфера киберпанка.</li>
+</ul>
+
+</div>
+</div>
+
+<!-- ======================
+1 МЕСТО
+====================== -->
+
+<div class="game-card gold top-one reveal">
+
+<div class="game-image"
+style="background-image:url('https://i.pinimg.com/originals/d7/fa/18/d7fa182132f4e0e17692e8b0ee04a7ae.png')">
+</div>
+
+<div class="game-content">
+
+<div class="rank">
+🏆 #1 место
+</div>
+
+<h3>Minecraft</h3>
+
+<p>
+Minecraft — величайшая песочница в истории видеоигр. За годы существования проект превратился из небольшой инди-игры в глобальный культурный феномен, который знают миллионы людей по всему миру.
+</p>
+
+<p>
+Главная особенность Minecraft — абсолютная свобода. Игрок сам выбирает, чем заниматься: исследовать мир, строить замки, добывать ресурсы, создавать фермы, изучать механизмы или просто путешествовать.
+</p>
+
+<p>
+Режим выживания предлагает полноценное приключение с добычей ресурсов, исследованием пещер, битвами против монстров и развитием собственной базы.
+</p>
+
+<p>
+Творческий режим позволяет создавать практически любые объекты. Игроки строят целые города, страны, космические станции и даже работающие компьютеры.
+</p>
+
+<p>
+Отдельного внимания заслуживает система Redstone, благодаря которой можно создавать автоматические механизмы невероятной сложности.
+</p>
+
+<p>
+Мультиплеер сделал Minecraft настоящей социальной платформой. Существуют тысячи серверов с уникальными режимами, мини-играми и огромными сообществами игроков.
+</p>
+
+<p>
+Влияние Minecraft на игровую культуру сложно переоценить. Игра вдохновила миллионы людей на творчество, программирование, архитектуру и создание собственного контента.
+</p>
+
+<h4>Почему стоит пройти?</h4>
+
+<p>
+Minecraft дарит уникальный игровой опыт, который невозможно повторить в другой игре. Каждый игрок создаёт собственную историю.
+</p>
+
+<h4>Интересные факты</h4>
+
+<ul>
+<li>Одна из самых продаваемых игр в истории.</li>
+<li>Используется в образовательных программах.</li>
+<li>Сообщество существует более 15 лет.</li>
+<li>В игре построены полноценные компьютеры и калькуляторы.</li>
+<li>Серверы способны объединять тысячи игроков одновременно.</li>
+</ul>
+
+<h4>Основные плюсы</h4>
+
+<ul>
+<li>Полная свобода творчества.</li>
+<li>Выживание и исследование.</li>
+<li>Строительство любых объектов.</li>
+<li>Мощный мультиплеер.</li>
+<li>Огромное влияние на индустрию.</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ======================
+ПОЧЕМУ СТОИТ ПРОЙТИ
+====================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Почему эти игры стоит пройти?</h2>
+</div>
+
+<div class="info-box">
+
+Каждая игра из этого рейтинга представляет отдельную эпоху развития игровой индустрии.
+
+Counter-Strike 2 показывает мир соревновательного гейминга и киберспорта.
+
+Roblox раскрывает возможности пользовательского творчества.
+
+ULTRAKILL демонстрирует скорость и драйв классических шутеров.
+
+S.T.A.L.K.E.R. 2 дарит уникальную атмосферу исследования и выживания.
+
+Half-Life 2 показывает революционные технологии своего времени.
+
+Elden Ring и Dark Souls учат преодолевать трудности и получать удовольствие от сложных испытаний.
+
+Resident Evil 4 демонстрирует, как одна игра способна изменить целый жанр.
+
+Cyberpunk 2077 показывает потенциал современных RPG.
+
+Minecraft остаётся символом абсолютной свободы и творчества.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================
+ЗАКЛЮЧЕНИЕ
+====================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Заключение</h2>
+</div>
+
+<div class="info-box">
+
+Все представленные игры оставили огромный след в истории видеоигр.
+
+Одни создали новые жанры, другие задали стандарты качества, третьи вдохновили миллионы игроков по всему миру.
+
+Даже спустя годы большинство этих проектов остаются актуальными и продолжают влиять на современную индустрию.
+
+Если вы считаете себя настоящим ПК-геймером, знакомство с каждой игрой из этого списка позволит получить бесценный игровой опыт и лучше понять историю видеоигр.
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ======================
+LIGHTBOX
+====================== -->
+
+<div class="lightbox" id="lightbox">
+
+<span class="lightbox-close">&times;</span>
+
+<img id="lightbox-img" src="" alt="">
+
+</div>
+
+<!-- ======================
+COOKIE BANNER
+====================== -->
+
+<div class="cookie-banner" id="cookieBanner">
+
+<div class="cookie-text">
+
+🍪 Мы используем cookie-файлы для улучшения работы сайта,
+аналитики и повышения удобства пользователей.
+
+Продолжая использовать сайт, вы соглашаетесь с использованием cookie.
+
+</div>
+
+<button class="cookie-btn" id="acceptCookies">
+
+Принять
+
+</button>
+
+</div>
+
+<!-- ======================
+FOOTER
+====================== -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<strong>Автор — Backaev1</strong>
+</div>
+
+<div>
+Поддержка:
+<a href="mailto:backaev1@gmail.com">
+backaev1@gmail.com
+</a>
+</div>
+
+<div>
+По личным вопросам:
+Telegram: @Backaev1
+</div>
+
+<div>
+© 2026 INNTOP
+</div>
+
+<div>
+Все права защищены
+</div>
+
+<div>
+Политика конфиденциальности
+</div>
+
+<div>
+Пользовательское соглашение
+</div>
+
+</div>
+
+</div>
+
+</footer>
+
+<script>
+
+/* ======================
+ANIMATION
+====================== */
+
+const observer = new IntersectionObserver((entries)=>{
+
+entries.forEach((entry)=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add('show');
+
+}
+
+});
+
+},{
+threshold:0.15
+});
+
+document.querySelectorAll('.reveal').forEach((item)=>{
+
+observer.observe(item);
+
+});
+
+/* ======================
+LIGHTBOX
+====================== */
+
+const lightbox =
+document.getElementById("lightbox");
+
+const lightboxImg =
+document.getElementById("lightbox-img");
+
+document.querySelectorAll(".game-image")
+.forEach(image=>{
+
+image.addEventListener("click",()=>{
+
+const bg =
+window.getComputedStyle(image)
+.backgroundImage;
+
+const url = bg.slice(5,-2);
+
+lightboxImg.src = url;
+
+lightbox.classList.add("active");
+
+});
+
+});
+
+lightbox.addEventListener("click",()=>{
+
+lightbox.classList.remove("active");
+
+});
+
+/* ======================
+COOKIE
+====================== */
+
+const cookieBanner =
+document.getElementById("cookieBanner");
+
+const acceptCookies =
+document.getElementById("acceptCookies");
+
+if(localStorage.getItem("cookiesAccepted")){
+
+cookieBanner.classList.add("hide");
+
+}
+
+acceptCookies.addEventListener("click",()=>{
+
+localStorage.setItem(
+"cookiesAccepted",
+"true"
+);
+
+cookieBanner.classList.add("hide");
+
+});
+
+</script>
+
+</body>
+</html>
